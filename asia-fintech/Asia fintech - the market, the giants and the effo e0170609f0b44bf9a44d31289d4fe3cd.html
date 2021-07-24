@@ -1,0 +1,652 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Asia fintech - the market, the giants and the effort to stand out</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="297722f2-ac1f-4701-b166-b635ff9f31d6" class="page sans"><header><h1 class="page-title">Asia fintech - the market, the giants and the effort to stand out</h1></header><div class="page-body"><p id="7bc2b10a-3e86-4271-9e88-f611f92a50e7" class="">2 years ago when I was strolling in the street of Nanjing, China I saw a group of people gathering upfront. I couldn&#x27;t see what was getting people&#x27;s attention but there was the sound of music, so I assumed it must have been some sort of street artist performance. As I came closer, I saw a guy wearing Sun Wukong mascot, a very popular and legendary icon from historic Chinese tale, playing a three-stringed lute. </p><p id="549f4a8a-a5e6-4046-a32f-8f6fd93ada09" class="">People got very amused and amazed at his performance and makeup, me included, so I decided to walk towards after he was done to give him some tips. Only after I took some cash out from my pocket did the guy pick up a sign made out of paper box 📦 with handwritten letters: <span style="border-bottom:0.05em solid"><strong>&quot;WeChat only&quot;</strong></span>. </p><p id="35a0771d-5936-4f99-88b5-5bac29f2f4c3" class="">I never felt so low-tech in my life. </p><p id="42f0d9f8-e71d-4483-a571-e2c7dfb76a97" class="">
+</p><p id="54d3749b-b85d-419a-aa2d-fdb30dbf124a" class=""><strong><em>So, what fuels the growth and needs for fin-tech apps like Wechat? (more accurately, WechatPay, which is integrated inside Wechat app). </em></strong></p><p id="4cff58bd-3e71-44d8-b09e-58c2935ae2a8" class="">
+</p><p id="453a1198-3fca-49c5-bc43-b6025cd805e4" class="">P/S: Here is a photo of the street artist disguised as Sun Wokong. This made me travel way back to my childhood at the time so I just gotta share 😎 </p><figure id="e0170609-f0b4-4bf9-a44d-31289d4fe3cd" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-12_at_1.03.09_AM.png"><img style="width:712px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-12_at_1.03.09_AM.png"/></a></figure><p id="02635250-ac54-4e25-b97f-f74572bd6241" class=""> </p><p id="4b2d4af7-7b5a-4e40-85b6-51b02d1170ad" class="">In this article, we&#x27;ll first take a look at the overall trend of fintech scene in Asia and why it is growing. </p><p id="48db4fb6-4857-40e6-8793-ba3369c84d1a" class="">We will then narrow it down to Peer-to-peer (P2P) payment, the sector that has empowered giant competitors such as Wechat and Alipay. I also covered some big competitors in details, specifically their main features and competitive advantages against dominant players like Wechat.</p><p id="19331c28-1d7f-4920-aff1-fdf31321d3c8" class="">And lastly, we will briefly compare P2P apps in Southeast Asia (SEA) versus those in the US market. </p><p id="3777d4f9-366b-4fe6-94d5-e0fc5c245b1f" class="">Enjoy!</p><h2 id="894deb39-3f34-4234-8028-b06c084bc936" class="">Overview of fintech investment in Asia </h2><p id="ae16af05-4147-4da8-86e3-ae4ebd7af4f5" class="">Whether you have actually used WeChatPay or not, you must have heard of WeChat. Its success in China and in global stage has empowered a lot of other P2P payment apps to become the second WeChat of Asia. </p><p id="2e1c8dd4-2030-447a-a01b-462dcf135ff6" class="">In fact, P2P payment apps in Asia has got more opportunities to grow thanks to a rising investment in fintech in general. 2018 witnessed a record breaking amount of investment in Asia market, which included <strong>$14 billion</strong> raised solely by Ant Financial (China). </p><p id="88edfce9-2cae-4f14-add6-1a44f6b48f80" class="">2019 experienced a slow start at the beginning of the year, but mega-deals still managed to contribute to <strong>$13 billion</strong> by end of year. Even amid the pandemic, deal value in fintech surged to <strong>$835 million</strong> only in the first half of 2020. These numbers well reflect the fact that Asia has shown explosive growth in demand for fintech.</p><p id="278fb96b-f853-4b08-b543-54ccd9b154de" class="">
+</p><figure id="4e8c6c53-cfb1-41fd-95ea-0f4f084e3d9e" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-14_at_11.17.01_AM.png"><img style="width:1218px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-14_at_11.17.01_AM.png"/></a><figcaption><em>*KPMG 2019 report Pulse of fintech</em></figcaption></figure><h2 id="cad2f843-bce3-414b-9d97-108e17beac5c" class="">What fuels the needs for fintech?</h2><p id="8bd6c56c-c209-46fe-8c89-dcbb12891676" class=""><em>Fintech landscape has got a lot more competitive over time but it has not yet shown any sign of halt. Investors continue to pour a lot of money into startups, many of which have been birthed to focus on different niche possibilities. What are the contributing factors behind the scene?</em></p><p id="ee56f80b-f0a1-4b0c-ae9c-fa1d7137fb4b" class=""><strong>1. Growing middle class and the rise of e-commerce</strong></p><p id="21bd3e3b-4dfd-48a6-be9b-912dfd2ae26c" class="">Asia has experienced a substantial increase in middle class population, which was estimated to be 2 billion in 2020 and is set to increase to 3.5 billion by 2030 (Statista). </p><p id="3c2f1dd5-d6a7-4bf0-bcdb-0565599320b4" class="">Growing middle class population with higher average income means more money are spent on food, education, technology, clothes, and a need for financial services. To satisfy their needs, people turn to e-commerce for a more time and cost-saving shopping experience. Coupled with low credit card penetration rate, business now have more opportunities than ever to innovate alternative payment tools that enable buyers to make transactions. </p><p id="401e80f6-d2f0-40fc-853a-2d2112d923c3" class="">We have seen giant e-commerce players launching programs such as buy now - pay later or in-house products (i.e ShopeePay) that offer exclusive rewards or cash back to buyers. These initiatives give more incentives to users while encouraging them to adopt digital payments and move away from traditional cash.</p><figure id="dfc2768e-1582-48ed-9245-34c24b37d5ec" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-20_at_2.58.41_PM.png"><img style="width:1146px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-20_at_2.58.41_PM.png"/></a><figcaption><em>*The rise of Asia middle class by Statista</em></figcaption></figure><p id="837fcb86-913b-479d-9398-09ff9528ed80" class="">
+</p><p id="8f090111-3838-4ce3-b25a-86aef571c141" class=""><strong>2.Unbanked population with access to internet</strong></p><p id="0ff6f624-fe5c-4ad9-9b9b-c8e251c418db" class="">In rural areas of countries like Vietnam, Indonesia and India, a large portion of the population finds themselves unable to get a bank account. It is, however, very easy for almost everyone to obtain a phone with access to internet. </p><p id="f2263c88-b084-4515-bc8e-2c1808bf54d2" class="">To bring this segment into current market, many startups are building products to help overcome this entry barrier.</p><p id="3b4c4da2-de54-4c98-b6bd-1f3be859d8d4" class=""><strong>3.Low credit rate</strong></p><p id="363d0f75-3707-4334-83b7-6bed82ff6f9d" class="">Insufficient access to bank account across developing countries results in a lack of traditional records for trusted credit rating, making it harder for people to secure loans. </p><p id="2fa45a6f-d8d4-4ff7-9c8e-3738f552a44c" class="">In emerging markets such as Indonesia or Vietnam, micro financing is seen as a promising option for the middle-class to fund their business. A lot of <a href="https://techcrunch.com/2021/03/23/jeff-raises-1m-to-build-alternative-credit-scoring-and-other-fintech-products-for-southeast-asia/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8&amp;guce_referrer_sig=AQAAAA1tXBzzZAy8cX0e_JLWItNXxCDsSNz8RE_RgZIB_-jGAOwi_psZNASfUagyUOoLBnvrFkqVlR5GYte9RpoIYl0iG8CGB3zj5x-PFiuRBEkmQzxlNmMjdSKr-Y_heGXdX5qmnzv04PcffzGUWkj-ymNiQxbJb43KRHHYvvwKpJql">fintech business</a> have taken advantage to invest in new consumer loan products that address people&#x27;s needs by connecting borrowers to suitable lenders or providing alternatives for lenders to evaluate credit scoring.</p><p id="100775a1-b18e-43c0-b2d0-3a1f663d1052" class=""><strong>4.Dominance of gen Z</strong></p><p id="0ff167a2-1bed-44dc-bea2-4daf780cbee0" class="">Gen Z (born between early 1996-2010) already made up for <strong>32%</strong> of the global population as of 2019. Countries such as Vietnam, Indonesia and Myanmar have seen a surge in social media usage mostly prevalent among gen Z. They spend more time on social media, adopt new technologies faster and set a higher standard for user experience. Traditional services are required to refine their service to meet with their needs in terms of product offerings and better user experience. </p><p id="76aedcda-14a4-46db-8a00-d6bc24821221" class="">While traditional financial institutions may have more resources, they often lack expertise in state-of-the-art technologies and insights on current market trends. Many fintech startups are expected to fill this gap through partnerships with banks and help them to redefine user journey and optimize operation process. </p><h2 id="360a007f-730f-4681-950b-558fd4ed16ca" class="">Who&#x27;s ruling the game? </h2><p id="54fa0570-f654-4925-9c37-34a6500a3176" class="">A lot of existing big players in the fintech market focus its financial offerings in peer to peer payment, a service that allows users to make fast transaction from their bank account to another individual through mobile app. </p><p id="c0ef1889-1f43-41ad-87ee-d5b54c77a875" class="">Some business launched its product as a standalone app, while others look at P2P as an element they must bring into existing platform to stay competitive and relevant in the market. Some examples include:</p><ul id="245a1821-81b5-41c1-90f2-0553fdccad07" class="bulleted-list"><li>P2Ps integrated under super apps: <ul id="6762db0b-eb9f-43d6-be89-f27b6b718a34" class="bulleted-list"><li>GrabPay (Grab)</li></ul><ul id="b4b1dc46-e1d5-4797-920e-22c29c0667c6" class="bulleted-list"><li>GoPay(Gojek) </li></ul><ul id="d495e5ef-9745-41e8-8eaa-e3db2ce48a9d" class="bulleted-list"><li>WeChat Pay(WeChat)</li></ul><ul id="90d68ea8-0ed1-446f-8fbd-11011deee969" class="bulleted-list"><li>KakaoPay (KakaoTalk)</li></ul><ul id="fbbb9b80-8a31-4ca8-b654-181521b11cda" class="bulleted-list"><li>...</li></ul></li></ul><ul id="0c1e59e2-b616-474e-8abd-de6f125e5cf1" class="bulleted-list"><li>P2Ps built as a standalone digital wallet: <ul id="7593000e-3c20-45f5-815e-926b35df1c8f" class="bulleted-list"><li>MoMo</li></ul><ul id="b7f4d5c1-79c9-450a-9726-6a3c32e53d74" class="bulleted-list"><li>AirPay</li></ul><ul id="f7506c54-d471-4b87-b070-9638976628fb" class="bulleted-list"><li>Coins.ph</li></ul><ul id="96851865-780f-4730-8152-f826be4c5916" class="bulleted-list"><li>TGN Wallet</li></ul><ul id="ed750f58-db13-449d-9152-648fde4dbe14" class="bulleted-list"><li>...</li></ul><p id="c1a36c1b-2bbf-430f-b03f-989ecfa31ca6" class="">
+</p></li></ul><p id="e20b0aa7-5c18-4a62-a648-5c54aa1d8716" class="">Let&#x27;s look at some of the big competitors in Asia&#x27;s market and see what they have to offer!</p><figure id="6a10a167-80ed-4c62-806a-45fc5d960f3a" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-21_at_1.28.10_AM.png"><img style="width:1386px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/Screen_Shot_2021-07-21_at_1.28.10_AM.png"/></a></figure><p id="ac4a10a9-9e9d-4274-9411-3830c15c2b96" class="">
+</p><p id="1730bba9-255f-48bb-9221-5a6e6a190c85" class="">A common pattern found across these products is a wide range of social features embedded along with major financial service offerings. The purpose of those social features or public service features, after all, is to make users stay longer on the app. Sticky users bring more money into the platform, increasing their chance of using other financial-related functionalities. </p><p id="54e52895-b1a9-48d6-9fa3-aa2711166fb6" class="">WeChat definitely raised the benchmark for what business should do to maximize user engagement. Many subsequent P2P apps tried to offer WeChat-defined &quot;must-have&quot; features on their platform while developing its own competitive advantage. </p><p id="da446133-d2a3-4e09-b23d-1706072265d3" class="">
+</p><p id="a50554ba-cd1c-4e26-afe1-acb1334ae0d9" class=""><strong>AliPay</strong> for example did a pretty good job in bringing more social features into its platform to catch up with WeChat. It, however, seems to focus more on financial services for users who prioritize smart payment system as much as social features. Alipay supports more currencies than WeChat and allows higher withdrawal limit for instance. </p><p id="0767a6fa-b785-42ef-80a4-20372c5054ec" class=""><strong>WeChat</strong> meanwhile invests tremendously on building its own integrated e-commerce system. It supports users to set up e-commerce account as well as providing services to help e-commerce retailers attract more traffic and enhance brand awareness like paid ads, giveaway campaigns, flash sales, etc. During the time I lived in China, I felt like most people use WeChat as their primary means of communication or survival even. I often joked around that one only needs WeChat to be able to survive in China. </p><p id="9c718238-b2b7-4384-a208-4acb1d0073d6" class="">People come to WeChat to navigate their day through a wide range of embedded public services or even to make a living. It certainly brands itself as a social, indispensable tool in people&#x27;s lives. </p><figure id="b2a1cc0b-6255-4962-9f84-b24ee3c9ef95" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download.png"><img style="width:2083px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download.png"/></a></figure><p id="9bd10879-0aab-41b3-8b03-f64293e8c6d2" class=""><strong><a href="http://coins.ph">Coins.ph</a></strong><strong> (Phillipines)</strong> turns out to be a big surprise when it is the first P2P app that permits users to make transaction with bitcoin on its platform, while its surrounding neighbors show mixed attitudes.  China is probable the most extreme when the government decided to totally ban Bitcoin or any other crypto currencies. Vietnam has yet shown any clear sentiment towards crypto so I&#x27;d say it&#x27;s neither strict prohibition nor enthusiastic endorsement. Singapore has a pretty educated and enthusiastic community of crypto traders. Even though Southeast Asia comprises of many countries, the volatility in regulations for fintech and new technology across the region can determine the way business craft their product strategy, directly affecting its user growth. Wether the region is able to establish a unified regulatory framework in the future or not, it&#x27;s still hard to tell. </p><p id="492e5dbd-38f5-4859-995b-731e3ccb3997" class="">The last interesting case is <strong>KakaoPay</strong>, which is integrated in KakaoTalk app. Kakao Pay is outstanding in the pool because its &quot;parent&quot; brand does a very great job in personalizing its brand according to users&#x27; interest and culture. South Korea has a reputation for offering various theme based products, namely LINE app and a plethora of theme-based coffee shops. KakaoPay gives its brand a voice, using cute and friendly characters to capture millennials&#x27; interest. To get users stay on its platform for a longer period of time, the super app also partners with different streaming services and launch Kaokao TV, where its users can access many K-dramas. More time spent means higher user engagement. The success of localization strategy was also seen on a heated saga between Uber and Grab in Southeast Asia, when Grab successfully forced Uber out of the market thanks to its deep understanding of local market that tremendously affected how it developed product strategy for each market in the region. </p><figure id="96e5a389-94c8-42f0-bde0-02e9ec69d3fc" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download_(1).jpeg"><img style="width:474px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download_(1).jpeg"/></a></figure><p id="9dc957bb-6c29-499d-bf9c-bf92770c1aad" class="">
+</p><p id="5bd4a837-1f31-45c8-b3a7-fab9a7ca24bd" class="">In short, we talked about how giant P2P apps in Asia aggressively invented new features to retain users on its platform. <strong>But how come P2P apps in the US kind of pursue a contradictory strategy though?</strong></p><p id="954bffa0-fbb1-4ddc-b60e-23e3904ffd66" class="">Contrary to a busy user interface and a juggle of features we saw in giants in Asia&#x27;s market, those in the US seem to prioritize minimal user experience, and they surely are successful business with very large user pool as well. </p><p id="b05162ea-b28d-4e0f-971f-1a4154ea6612" class="">
+</p><p id="2ac0212e-50ef-4bbb-b574-a2302fe22ed5" class=""><strong>GooglePay</strong></p><figure id="b78c4ffa-82cb-43c7-bc46-5a36960acb63" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/googlepay.png"><img style="width:1000px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/googlepay.png"/></a></figure><p id="4661fae3-5c44-4e3c-a60f-d04dd08e278e" class="">
+</p><p id="a1262e94-df3a-458a-a515-c03491ccc509" class=""><strong>Venmo</strong></p><figure id="4ca73103-8edb-4621-a236-553bc9c55518" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/venmo.jpeg"><img style="width:990px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/venmo.jpeg"/></a></figure><p id="f52d5afa-bc59-4737-9092-b6af576cc8cd" class="">
+</p><p id="ee199209-c0e2-4b9f-86fc-5da7bd74a9f9" class="">
+</p><p id="c4b3c4bd-8598-4590-bcb7-98641cd2965c" class=""><strong>Zelle</strong></p><figure id="a3d2b89a-ba3e-4856-bda7-9d7084903528" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/zelle.jpeg"><img style="width:3417px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/zelle.jpeg"/></a></figure><p id="04ee05f4-ba3f-463a-b4fb-08d4a654362b" class="">
+</p><p id="e56132b4-f772-44f0-b365-dbe5a6fae307" class="">
+</p><p id="8ef998a0-1370-4acf-b0ac-05990ebd1bdc" class="">In the last sector below, I discovered some of the contributing factors that have much to do with culture, which explains the psychology behind the way apps are designed to attract users on Asia market.</p><h2 id="83de5d01-12ac-4f36-a01f-ed5f99d52208" class="">How culture affects the way apps are designed for Asian consumers </h2><p id="e706902c-f0fa-4095-a9d0-0f48f3d86a05" class="">
+</p><figure id="5b4b7d69-c6e8-47a4-b40f-554aa82506d9" class="image"><a href="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download.jpeg"><img style="width:769px" src="Asia%20fintech%20-%20the%20market,%20the%20giants%20and%20the%20effo%20e0170609f0b44bf9a44d31289d4fe3cd/download.jpeg"/></a></figure><p id="6c828ac0-7839-4665-8f86-989e34d643be" class="">In a research conducted on the psychology of Asian consumers by Yong-Won Ha from University of Chicago, he cited an experiment in which Americans and Japanese were presented a scene of underwater animation consisting of fishes, rocks, bubbles, etc. While Japanese audience made most of their reference to background elements such as rocks and plants, Americans seemed to focus their attention on the fishes themselves. </p><p id="07bb75f4-7a4f-4c59-b173-162cf59618b1" class="">Asians, in other words, have a tendency to engage in holistic thinking while Westerners focus their analytics on a central object. These behaviors have been well nurtured in Asian and Western culture, in which the former promotes collectivism while the latter endorses individualism. Asians consumers are more comfortable with brand extensions, showing keen adoption to feature add-ons while Western consumers prefer a more neatly displayed and focused product. This behavior is also observed not only in fintech products but e-commerce as well, namely the superstar Amazon with big presence in the West versus Shopee of SEA. </p><p id="90d36337-e09d-4c19-8f36-166b33f432de" class="">Asians consumers are also more risk averse, hence more likely to stay with whatever makes them feel safe and familiar. The more time they invest in a certain app, the more hesitant they become at the thought of switching to another. Strong brand loyalty means users are willing to try out new features, poking around add-ons and exploring new functionalities. </p><h2 id="40b9e5e5-4975-48e7-96d9-9c954a789a96" class="">So what does this all mean</h2><p id="aea0ae34-39fa-46b8-8a02-0bc038e3ea6d" class="">The dominance of giant players coupled with Asian culture has forced P2Ps to level up their games in order to stay relevant in the competition. Business needs to be aware of its core strength and value proposition, focusing on a niche, may it be functional or emotional appeal, to retain loyal users. </p><p id="530ed847-5783-4fc0-a979-27f46f6d1ed1" class="">Super apps across Asia can strategically create effective synergy among its smaller business to leverage its user base, generating more revenues for the company. Will this become a big challenge for standalone products? Will standalone products pursue a different set of strategy or they will try to become a super app themselves? </p><p id="e57a891d-be6c-4d0b-86ec-79808135fa04" class="">In the next research I will be looking into one or two specific P2P apps from both US and Asia&#x27;s market and dive deep into its feature offerings and product strategy so stay tuned</p><p id="77c63041-14aa-45f2-b4fb-c1d74cd61f69" class="">
+</p><p id="efac05b2-f495-44a7-9472-bbb03e1e05be" class="">Source:</p><p id="065ed701-acea-47d8-b0a4-1b73e3b9486b" class=""><a href="https://kr-asia.com/fintech-startups-ride-the-pandemic-wave-e-conomy-sea-report-2020">https://kr-asia.com/fintech-startups-ride-the-pandemic-wave-e-conomy-sea-report-2020</a> <a href="https://assets.kpmg/content/dam/kpmg/xx/pdf/2020/02/pulse-of-fintech-h2-2019.pdf">https://assets.kpmg/content/dam/kpmg/xx/pdf/2020/02/pulse-of-fintech-h2-2019.pdf</a></p><p id="7b8583ec-07cf-4339-b868-9f8d7333e0b0" class=""><a href="https://www.statista.com/chart/8402/asian-middle-class-on-the-rise/">https://www.statista.com/chart/8402/asian-middle-class-on-the-rise/</a></p><p id="c4a3e493-70f9-43ec-bc05-f32d11c50723" class=""><a href="https://www.neatinteractive.com/news/34-knowledge/91-generation-z-in-southeast-asia">https://www.neatinteractive.com/news/34-knowledge/91-generation-z-in-southeast-asia</a></p></div></article></body></html>
