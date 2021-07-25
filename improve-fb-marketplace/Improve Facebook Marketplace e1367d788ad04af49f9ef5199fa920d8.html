@@ -1,0 +1,646 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Improve Facebook Marketplace</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5986e856-cfc2-4c20-9271-9dc48c5c980a" class="page sans"><header><h1 class="page-title">Improve Facebook Marketplace</h1></header><div class="page-body"><nav id="bfd80486-44a3-4dd0-9d95-879c3b6688c2" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c1c466b0-31ec-4c32-84fd-1be993b38800">Background information</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8242b9e6-b656-457f-9a1d-2076d8610dc0">Business objective</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#90159022-6cac-4e8b-898b-6e190c6ce2aa">Prioritize user groups </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#be3610cb-0c1a-4c5b-b298-96d184a9068e">User pain points &amp; Prioritization</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1743a543-fdd2-49cd-b623-e5592d342735">Proposed improvements </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#72b3b049-2b03-4690-b815-77bbaee36253">Metrics to measure success</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6f004beb-a681-43fa-9899-5348159811e0">Appendix</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#60a4b9bc-4aa8-451d-a699-c0775ff44de6">Appendix 1</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f7e72110-3d58-47b8-8b57-e9cbd9e22a0f">Appendix 2</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#65d6fe99-1d01-4295-be7c-b4cfa61b9f77">Appendix 3</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9a366326-6cc5-4f12-81a2-d32b8d7ec524">Appendix 4</a></div></nav><h2 id="c1c466b0-31ec-4c32-84fd-1be993b38800" class="">Background information</h2><p id="1f9b0123-6284-4d49-97a3-ded9b406745d" class="">Market Place is a feature on facebook application that allows people to buy, sell and discover things around them. It was launched in 2016, branding itself as a &#x27;social marketplace&#x27; since there&#x27;s a social touch on this e-commerce feature. Sellers and buyers take to each other through messenger, and both parties can check each other&#x27;s facebook profile as the transaction takes place totally on facebook. </p><h2 id="8242b9e6-b656-457f-9a1d-2076d8610dc0" class="">Business objective</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="084b1076-37fa-42fa-ab5b-31b21914d6fa"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Increase user engagement on Market Place </div></figure><p id="7c0e4073-f71c-487b-abc5-27b084377ef4" class="">
+</p><p id="d3b17672-dd59-4470-8214-b7dd435129ea" class="">I chose this business objective for 2 reasons:</p><ul id="3717d7d4-408e-4e50-9d47-a4fb6b34dd2a" class="bulleted-list"><li><strong>Support Facebook&#x27;s business model</strong>: Facebook&#x27;s main revenue stream comes from ads. Advertisers set up marketing campaign tailored to the target demographic, behavior, background, and many other attributes. Social features on Facebook, including Market Place, exist to retain users longer on its platform. User engagement is therefore extremely important because high engagement rate can translate into ad views. </li></ul><ul id="fffc7dd9-076c-465e-9995-d34d595a3ea0" class="bulleted-list"><li><strong>Company&#x27;s mission:</strong> Facebook&#x27;s mission statement is <strong>“</strong>to give people the power to share and make the world more open and connected&quot;. While marketplace certainly supports this mission of Facebook by connecting retailers to customers, we can only truly evaluate its efficiency by looking at how users are engaging with each other. </li></ul><h2 id="90159022-6cac-4e8b-898b-6e190c6ce2aa" class="">Prioritize user groups </h2><div id="333fafd5-1848-4ce8-b367-b3dc2526725e" class="collection-content"><h4 class="collection-title">Targeted user groups</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Item</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Retailers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Individual sellers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Buyers</th></tr></thead><tbody><tr id="3b320494-16d7-495d-93b8-a12bf2c04f20"><td class="cell-title"><a href="https://www.notion.so/User-needs-3b32049416d7495d93b8a12bf2c04f20">User needs</a></td><td class="cell-KZSe">Have a small business and want to branch out to different channels for customer acquisition</td><td class="cell-but]">Don&#x27;t have an official or long-term business, but have some stuff here and there that want to pass away for extra cash </td><td class="cell-Sqhk">Look for used stuff with good quality at a great price</td></tr><tr id="4b232712-44e3-4fd1-810a-1f38af8cdc6d"><td class="cell-title"><a href="https://www.notion.so/Example-of-user-persona-4b23271244e34fd1810a1f38af8cdc6d">Example of user persona</a></td><td class="cell-KZSe">Tien, 33 years old, has her own shop in sport equipment supply. Sells her goods to individual customers and local gyms</td><td class="cell-but]">Gerald, 22 years old, college students, always needs to sell stuff like furniture or books after he&#x27;s done with school years</td><td class="cell-Sqhk">Kim, 24 years old, wants to get a used good bike so she can commute from home to college </td></tr></tbody></table></div><p id="06e5191d-1c32-4ed0-856e-c708153d17e8" class="">I will focus on <strong>buyers group</strong> for now because:</p><ul id="a91f2a68-1142-495a-a79e-b2c928fab7e7" class="bulleted-list"><li>Buyer groups make up for a much higher volume of users on Facebook marketplace than sellers. Their engagement is crucial as they indirectly bring in revenues for Facebook by viewing ads created by advertisers on the platform</li></ul><ul id="63cba755-1b11-434d-a273-c486788692ca" class="bulleted-list"><li>Buyers are very important for sellers when considering whether sellers would join Facebook marketplace or not. Facebook itself is not a typical e-commerce platform such as Amazon or E-bay. A lot of services such as shipping, return or customer review are not offered. The best competitive advantage that Facebook marketplace can offer to sellers is its vast network of users, who can potentially turn to buyers. Maintaining a high user engagement for buyers therefore has a direct impact on the growth of sellers</li></ul><h2 id="be3610cb-0c1a-4c5b-b298-96d184a9068e" class="">User pain points &amp; Prioritization</h2><p id="d9e5d23e-9cd0-41e5-b7f4-849bda9aabe5" class="">Before diving into user pain points, it&#x27;s important to remember what goals buyer group is trying to achieve. </p><blockquote id="e5fb1dde-99b9-4141-959c-09982c48169f" class=""><strong>Primary goal</strong>: to buy something that fits their need and budget</blockquote><blockquote id="c385fb8d-d0f9-4664-b3cb-c8aa559cb57a" class=""><strong>Secondary goa</strong>l: to discover good stuff around them but not necessarily going to purchase</blockquote><p id="453b9391-725d-4804-9314-d778bc504cd2" class="">
+</p><p id="ad8764fa-6fba-4de5-8aa4-07f5a79e31bf" class="">With these goals in mind, I list down key pain points faced by buyer group below. But before that, this is a simple framework I&#x27;m using to prioritize User pain points:</p><div id="b588d1ef-afb8-427a-af2b-636cfd623318" class="column-list"><div id="b9428117-b814-4517-86b7-884e2f2a8bb6" style="width:93.75%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="70e1b721-11a6-4060-9bef-ef26f1bc5ae9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>UX impact </strong></div></figure></div><div id="31f73888-414a-42dc-adfe-2f91190c291d" style="width:6.25%" class="column"><p id="58f585bd-674f-4421-9e64-0bacb62e302d" class="">
+</p></div></div><ul id="1c1073b8-73e5-4eeb-9b2e-82cee5ab1251" class="bulleted-list"><li><span style="border-bottom:0.05em solid">High</span> : Has a significant impact on user journey by generating 1 or more barriers that prevents them from achieving primary goal </li></ul><ul id="d6f7d137-2851-47ce-a398-e61241286b18" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Medium</span>:  Reduces user experience in overall, but a temporary solution is already provided</li></ul><ul id="75c83c20-063e-4dbb-b403-0bae9566e129" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Low</span> - Poses minor nuisance to user experience</li></ul><p id="0a1dcbce-6862-486b-9bbc-af6484a3fe67" class="">
+</p><div id="64968f75-811f-4ad4-8117-29b427881593" class="collection-content"><h4 class="collection-title">User pain points </h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Item</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Details</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>UX impact</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Rationale</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Screenshot</th></tr></thead><tbody><tr id="ca9e29cf-856f-4dc9-95bc-95632f4610b5"><td class="cell-title"><a href="https://www.notion.so/Pain-point-1-ca9e29cf856f4dc995bc95632f4610b5">Pain point 1</a></td><td class="cell-KZSe">I get bombarded by irrelevant &quot;today&#x27;s picks&quot; products that I don&#x27;t have any interest in</td><td class="cell-but]">High</td><td class="cell-={bU">When users, especially those new to marketplace, are recommended many products that don&#x27;t fit with their interest, their level of interest in the platform can decrease immediately </td><td class="cell-AO}e"><a href="">Appendix 1</a></td></tr><tr id="9249a2b3-c089-430b-b6bb-24dc728515c8"><td class="cell-title"><a href="https://www.notion.so/Pain-point-2-9249a2b3c089430bb6bb24dc728515c8">Pain point 2</a></td><td class="cell-KZSe">I get frustrated because products are classified in the wrong categories</td><td class="cell-but]">Medium</td><td class="cell-={bU">Wrong product categories can undermine the trustworthiness of Facebook market place. However Facebook already allows users to report products with inaccurate description (even though it can still be better optimize), so I put UX impact as Medium</td><td class="cell-AO}e"><a href="">Appendix 2</a></td></tr><tr id="7a6862c0-9aa1-4268-8c3e-113c1524e750"><td class="cell-title"><a href="https://www.notion.so/Pain-point-3-7a6862c09aa142688c3e113c1524e750">Pain point 3</a></td><td class="cell-KZSe">I find it hard to customize items I&#x27;m looking for due to lack of filter</td><td class="cell-but]">Medium</td><td class="cell-={bU">Lack of filters slow down the process of finding desired products. Users with primary goals of purchasing something would usually have a brief idea of what they want to purchase and a budget in mind. However, more filters will be available if users click through each product category. Even though it&#x27;s not the best solution yet in my opinion, it&#x27;s users can make do with it</td><td class="cell-AO}e"><a href="">Appendix 3</a></td></tr><tr id="e7c5664e-797d-448e-8df0-fa6799729c82"><td class="cell-title"><a href="https://www.notion.so/Pain-point-4-e7c5664e797d448e8df0fa6799729c82">Pain point 4</a></td><td class="cell-KZSe">I am unable to verify product quality</td><td class="cell-but]">Medium</td><td class="cell-={bU">Since there&#x27;s no user review on listed products, users are unable to verify the authenticity at first glance. However since users can freely talk to sellers via messenger, they can inquire users to provide more information. Hence I put it as Medium priority</td><td class="cell-AO}e"><a href="">Appendix 1</a></td></tr><tr id="e225b356-09be-41cf-8bab-5ce1b9ee554d"><td class="cell-title"><a href="https://www.notion.so/Pain-point-5-e225b35609be41cf8bab5ce1b9ee554d">Pain point 5</a></td><td class="cell-KZSe">I feel uncomfortable knowing sellers can stalk my profile </td><td class="cell-but]">Low</td><td class="cell-={bU">Facebook users in general can set privacy setting that limits strangers from what they can see. Even though it has not yet covered the case of users who only want to limit profiles to sellers, it does not cause any direct barrier during the user journey</td><td class="cell-AO}e">-</td></tr><tr id="a8a3619c-beb6-4643-96d1-d8e82ed71dfe"><td class="cell-title"><a href="https://www.notion.so/Pain-point-6-a8a3619cbeb6464396d1d8e82ed71dfe">Pain point 6</a></td><td class="cell-KZSe">I cannot find what I am looking for</td><td class="cell-but]">High </td><td class="cell-={bU">This can be due to multiple reasons: product is not listed, sole out, etc. Users who cannot find what they need immediately may not go back to the platform in the future</td><td class="cell-AO}e">-</td></tr><tr id="3815dcad-2b3c-41d1-8735-70eeedd464cf"><td class="cell-title"><a href="https://www.notion.so/Pain-point-7-3815dcad2b3c41d1873570eeedd464cf">Pain point 7</a></td><td class="cell-KZSe">I have to bargain with sellers because their pricing description is not accurate</td><td class="cell-but]">Low</td><td class="cell-={bU">Users potentially have to go through a (lengthy) process of inquiring more information about the product, and it can be frustrating bargaining. However Facebook already allows buyers to report sellers if they provide false information, so sellers will be more self conscious about the pricing description in the future </td><td class="cell-AO}e"><a href="">Appendix 4</a></td></tr></tbody></table></div><p id="2a02d998-12e9-4d26-8e92-a2ee5ecf97c6" class="">After evaluate each pain point, I&#x27;m going to focus on those with High level of impact on user experience, which is pain point 1 &amp;  6</p><h2 id="1743a543-fdd2-49cd-b623-e5592d342735" class="">Proposed improvements </h2><p id="4742d40b-1b9e-4575-ab75-1b33ad05f872" class=""><strong>Pain point 1:</strong> I get bombarded by irrelevant &quot;today picks&quot; products that I don&#x27;t have any interest in</p><ul id="c0d682fd-0b4a-4344-b525-52928aa69120" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Proposal 1</span>: Understand their interest and needs first before offering them product picks. For new users, when they go on marketplace for the first time we can offer a one-time pop-up that requires users to select some interest (i.e cars, sports, etc). Users will see top product pick based on their selection each time they go on market place. </li></ul><ul id="ef011448-c493-4459-8fbe-612201fb9e77" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Proposal 2</span>: Allow returning users to customize their own &quot;today picks&quot; based on price preference, location, number of inquiries, date listed, flash sale, etc </li></ul><ul id="e747ee53-c7b9-48b3-8a6f-573e2a8b3624" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Proposal 3</span>: Group items under &quot;product pick&quot; into one single cart, or let user scroll horizontally instead of vertically, so that users don&#x27;t feel overwhelmed by many choices.</li></ul><p id="2815c906-7c1a-4f7b-b0a9-596c6931b26d" class="">
+</p><p id="858f9380-53e2-4a88-b708-0ab1a37f6530" class=""><strong>Pain point 6</strong>: I cannot find what I am looking for</p><ul id="4c42cc2a-5c73-4b0d-9918-073862854e55" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Proposal 4</span> : Allow users to set up notification when a product matching their needs is listed</li></ul><ul id="2c7559de-ce84-4f64-bb31-8d46b7d2adda" class="bulleted-list"><li><span style="border-bottom:0.05em solid">Proposal 5</span>: Let users subscribe to relevant buy &amp; sell group that may offer what they are looking for in the future</li></ul><p id="a15124e6-3d81-473d-87ce-f015ef9e2218" class="">
+</p><div id="1f553d62-1c20-446a-b616-0b5d0761dde8" class="collection-content"><h4 class="collection-title">Prioritize improvements</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Technical complexity</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>UX impact</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Development effort</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Priority</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Rationale</th></tr></thead><tbody><tr id="1fecfa34-6e45-436f-abb4-d3006222f952"><td class="cell-gaPg"><span style="border-bottom:0.05em solid">Proposal 1</span>: Create a one-time pop-up that requires new marketplace users to select some interest (i.e cars, sports, etc) at their arrival </td><td class="cell-KZSe">Low</td><td class="cell-but]">High</td><td class="cell-Sqhk">Medium</td><td class="cell-title"><a href="https://www.notion.so/P1-1fecfa346e45436fabb4d3006222f952">P1</a></td><td class="cell-Puzk">This improvement can increase user experience because users will find suggested items based on their curated interest. There will be higher chance that they brow through the list.</td></tr><tr id="8edbcc7b-6b4e-445c-b752-048d31ccce84"><td class="cell-gaPg"><span style="border-bottom:0.05em solid">Proposal 2</span>: Allow returning users to customize their own &quot;today picks&quot; based on price preference, location, number of inquiries, date listed, flash sale, etc </td><td class="cell-KZSe">Low</td><td class="cell-but]">High</td><td class="cell-Sqhk">Medium</td><td class="cell-title"><a href="https://www.notion.so/P1-8edbcc7b6b4e445cb752048d31ccce84">P1</a></td><td class="cell-Puzk">Like above</td></tr><tr id="a403c84a-f80a-487e-abf1-358ad2c1ed1f"><td class="cell-gaPg"><span style="border-bottom:0.05em solid">Proposal 3</span>: Group items under &quot;product pick&quot; into one single cart, or let user scroll horizontally instead of vertically, so that users don&#x27;t feel overwhelmed by many choices.</td><td class="cell-KZSe">Low</td><td class="cell-but]">Medium</td><td class="cell-Sqhk">Low</td><td class="cell-title"><a href="https://www.notion.so/P3-a403c84af80a487eabf1358ad2c1ed1f">P3</a></td><td class="cell-Puzk">Less choice is equivalent to less confusion. By letting users to browse through product picks horizontally, they will not feel overwhelmed by irrelevant photos when arriving in market place. </td></tr><tr id="02d2ee21-1ea0-484c-ba95-3115f96733ba"><td class="cell-gaPg"><span style="border-bottom:0.05em solid">Proposal 4</span> : Allow users to set up notification when a product matching their needs is listed</td><td class="cell-KZSe">Medium</td><td class="cell-but]">High</td><td class="cell-Sqhk">High</td><td class="cell-title"><a href="https://www.notion.so/P2-02d2ee211ea0484cba953115f96733ba">P2</a></td><td class="cell-Puzk">Encourage users to engage with Market place even if they cannot find what they are looking for in the platform</td></tr><tr id="c81664b8-12f8-4be2-825c-0e1dd3a34634"><td class="cell-gaPg"><span style="border-bottom:0.05em solid">Proposal 5</span>: Let users subscribe to relevant buy &amp; sell group that may offer what they are looking for in the future</td><td class="cell-KZSe">Low</td><td class="cell-but]">Low</td><td class="cell-Sqhk">Low</td><td class="cell-title"><a href="https://www.notion.so/P3-c81664b812f84be2825c0e1dd3a34634">P3</a></td><td class="cell-Puzk">If users are desperately and actively looking for something, they may subscribe to different groups to get as much information as possible. Otherwise, casual buyers will exempt themselves from subscribing groups to avoid spamming</td></tr></tbody></table></div><p id="2db3eeb7-52cc-4859-914b-feb10e730b6d" class="">Based on the analysis above, I will focus on the following improvement proposals :</p><ol id="0e9b2fa1-82e3-4f44-a34c-57393aff9e3b" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">Must have</span>:  <ul id="c01e357d-e437-403b-92b2-64ec0318364e" class="bulleted-list"><li>Create a one-time pop-up that requires new marketplace users to select some interest (i.e cars, sports, etc) at their arrival </li></ul><ul id="1e630b9b-5466-4cf4-8bf8-c9f188b3aa44" class="bulleted-list"><li>Allow returning users to customize their own &quot;today picks&quot; based on price preference, location, number of inquiries, date listed, flash sale, etc </li></ul></li></ol><ol id="a0e553b7-a30e-4ece-a0d8-a30a8e323589" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">Good to have</span>:<ul id="1dcf0b2d-0fdc-4c68-8324-eb5fcfdd99cd" class="bulleted-list"><li>Allow users to set up notification when a product matching their needs is listed </li></ul></li></ol><ol id="eedee464-2680-4d0e-864f-a2cc990030b4" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid">Nice to have</span>: <ul id="4eb18b9e-2fd1-4468-88b8-2467e60eaf37" class="bulleted-list"><li>Group items under &quot;product pick&quot; into one single cart, or let user scroll horizontally instead of vertically, so that users don&#x27;t feel overwhelmed by many choices. (can do A/B testing for this feature improvement)</li></ul></li></ol><p id="76cd4ba3-c2d2-4156-bbd6-f1843f4cf507" class="">
+</p><h2 id="72b3b049-2b03-4690-b815-77bbaee36253" class="">Metrics to measure success</h2><p id="ee3c6288-ed33-4bb5-9b9b-35a9d4ca2f64" class="">I will be looking at the following metrics BEFORE versus AFTER the improvements are implemented:</p><ul id="5966bdce-35f7-45f5-911d-921384c19091" class="bulleted-list"><li><strong>Click through rate in product pick</strong>: are users clicking through top product pick more after it is tailored to their personal preference?</li></ul><ul id="8f1e7f44-2722-4e5f-bcf1-43f0411caab1" class="bulleted-list"><li><strong>Average time spent on product pick page</strong> : are users spending more time browsing item on product pick page?</li></ul><h2 id="6f004beb-a681-43fa-9899-5348159811e0" class="">Appendix</h2><h3 id="60a4b9bc-4aa8-451d-a699-c0775ff44de6" class="">Appendix 1</h3><p id="31a3e3ad-26a4-4483-a510-f70aa7b06d66" class="">Today&#x27;s pick is quite irrelevant to my personal interest. And I have no idea what these suggestions are based on </p><figure id="e1367d78-8ad0-4af4-9f9e-f5199fa920d8" class="image"><a href="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_10.37.52_AM.png"><img style="width:2750px" src="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_10.37.52_AM.png"/></a></figure><p id="7f193a01-78be-4b06-9bd6-ea082aa2e5d3" class="">
+</p><h3 id="f7e72110-3d58-47b8-8b57-e9cbd9e22a0f" class="">Appendix 2</h3><figure id="da770ccb-40aa-4e9f-9c05-99532e76b3e3" class="image"><a href="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_10.42.09_AM.png"><img style="width:2750px" src="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_10.42.09_AM.png"/></a></figure><p id="9c6ff7f8-c5d8-4efd-be0d-d0936701ef12" class="">
+</p><h3 id="65d6fe99-1d01-4295-be7c-b4cfa61b9f77" class="">Appendix 3</h3><p id="c8df5cce-91b6-4f72-9e52-e41b4c9d1a60" class="">Doesn&#x27;t offer filters at my first arrival. I have to click on specific category to have more filters</p><figure id="e6a321ee-6855-415a-9446-6e49c9150c76" class="image"><a href="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_11.38.09_AM.png"><img style="width:288px" src="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_11.38.09_AM.png"/></a></figure><p id="bef43813-ce0b-46e7-a1a9-24d7c492ef04" class="">
+</p><h3 id="9a366326-6cc5-4f12-81a2-d32b8d7ec524" class="">Appendix 4</h3><p id="614a4326-02a8-438e-9f0f-b8f5a66db3b5" class="">Items listed under &#x27;Free stuff&#x27; are actually not free once I talk to sellers</p><figure id="ec01d151-afca-41cf-9244-ddb937780027" class="image"><a href="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_7.38.47_PM.png"><img style="width:2626px" src="Improve%20Facebook%20Marketplace%20e1367d788ad04af49f9ef5199fa920d8/Screen_Shot_2021-07-25_at_7.38.47_PM.png"/></a></figure></div></article></body></html>
