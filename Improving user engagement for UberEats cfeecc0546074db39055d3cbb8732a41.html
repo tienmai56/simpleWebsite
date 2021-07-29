@@ -1,0 +1,646 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Improving user engagement for UberEats </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cfeecc05-4607-4db3-9055-d3cbb8732a41" class="page sans"><header><h1 class="page-title">Improving user engagement for UberEats </h1></header><div class="page-body"><nav id="c840971e-0aa7-4870-8948-3dd041c1d5b7" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4a99e61e-921e-49c0-94cb-af7b893609d9">Background information </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4b4ab98b-5d91-4c34-a095-3c26103245d7">Defining business objective</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#621892e0-9390-4e15-bf8c-4ffe489baf86">Business model</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#726c7690-c591-4f36-bccd-7170c628b36f">Company mission and strategy</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#19ba7a7e-ae4a-47b2-9192-4327f1a6c122">Targeted user &amp; user prioritization</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#10ec1b54-c4c5-40ca-a011-71aa9db2dab8">User pain points &amp; Prioritization</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6314291d-5800-4e9e-9486-99152a8c1f9b">User&#x27;s goals</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a1e42bf8-d168-4917-9b44-60f489c2accf">Framework for prioritization </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#40e5cdd2-eb82-4a45-9b77-9947abaf0576">Proposing solutions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5664058d-38bf-44d6-bf1d-ca5fc41d71a6">Prioritizing solutions </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#32c1b856-6ffd-4d9a-bcd0-f9081d4f95cd">Framework for prioritization </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b6959413-7951-4686-a0b3-999d4632f9f6">Conclusion </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3b4f28e8-2783-4bf4-bfde-3d2dbe4db0d8">Metrics</a></div></nav><h1 id="4a99e61e-921e-49c0-94cb-af7b893609d9" class="">Background information </h1><p id="7ba48d39-71ef-4e88-9d41-1bee999a48f6" class="">Uber Eats is a three-sided online food delivery platform launched by Uber in 2014. The app connects users with a broad range of local restaurants and food, so users can order from the full menus whenever they want. Apart from ordering, people can also view menus of the restaurant, track food order and leave reviews or ratings for the restaurant.</p><h1 id="4b4ab98b-5d91-4c34-a095-3c26103245d7" class="">Defining business objective</h1><h3 id="621892e0-9390-4e15-bf8c-4ffe489baf86" class="">Business model</h3><p id="2e98b42a-7c4f-44ec-9333-83b5cf67f49e" class="">UberEats acts as an intermediary among different participants on its platform, facilitating the process of food ordering between partnered restaurant and customers. As an intermediary, UberEats earns revenues from the following source:</p><p id="f00b0dab-03c2-475a-861a-2330560230cd" class=""><span style="border-bottom:0.05em solid">Commission fee per successful order</span>: For every order successfully purchased on its platform, UberEats will take a commission fee of its total cost. Partnered restaurants are often responsible to pay this fee. </p><p id="5642b7fd-624f-4ad9-954e-656532d585c8" class=""><span style="border-bottom:0.05em solid">Delivery fees</span>: For every order picked up and delivered to customers, UberEats takes a flat fee while the rest goes to driver. UberEats requires a flat fee irrespective of the size of the order. Users are often responsible to pay this fee</p><p id="71408b54-012d-47ff-adc6-0eb86c5851f3" class=""><span style="border-bottom:0.05em solid">Brand advertising:</span> UberEats earns money from collaborating with giant brands such as McDonald, Burger King. These corporate partners will pay UberEats for providing advertisings, promotion campaign or exclusive deals.</p><h3 id="726c7690-c591-4f36-bccd-7170c628b36f" class="">Company mission and strategy</h3><p id="42bf68f6-ddc3-490e-9194-fb2b3665363e" class=""><span style="border-bottom:0.05em solid">Uber&#x27;s mission</span>:  &quot;We ignite opportunity by setting the world in motion&quot;. The company seems to position itself as a technology platform that&#x27;s changing any type of user needs that involve &quot;moving&quot;</p><p id="40864301-6814-4e23-b785-9ba6f4ad5a83" class=""><span style="border-bottom:0.05em solid">Uber&#x27;s strategy</span>: To understand how UberEats fits in overall strategy of Uber, I looked at Uber&#x27;s strategy overall and come to the following conclusion regarding its strategic moves:<div class="indented"><ul id="5e80a56c-1672-48a3-8df8-96e326d484af" class="bulleted-list"><li>Prioritize user growth through extensive outreach to urban and suburban area </li></ul><ul id="bbc645eb-9094-4a7a-8012-b4c20ab9f175" class="bulleted-list"><li>Invest in technology to create exceptional user experience, guaranteeing to deliver food for customers in less than 30 minutes</li></ul><ul id="96634df8-1f48-4713-b53d-7c5da112f7f2" class="bulleted-list"><li>Minimize operation and acquisition cost through the synergy with Uber&#x27;s main ride haling business</li></ul><p id="11b9776c-6861-4887-a200-90de08348b24" class="">
+</p><blockquote id="1af6bdca-5351-4d28-8c1e-4ad63ee1e4f8" class="">For the purpose of this mini-project, I will focus on what UberEats can do to increase user engagement on its platform. </blockquote></div></p><p id="729072d9-9fe6-40d2-8641-e7a0058c9557" class=""><div class="indented"><p id="cc809ce2-2c6a-4631-b4ef-90d52ca88acc" class="">I chose this objective because :</p><ul id="bb6428eb-57ff-4a53-8b3d-3cf964c88ee3" class="bulleted-list"><li>High user engagement will drive user growth, which is of top priority for the company <strong>(strategy)</strong></li></ul><ul id="a3a5fef2-fc22-4cbf-8430-3ea25962ea1b" class="bulleted-list"><li>High user engagement will also indicate the level of which Uber was able to actually change user behavior in the way they are commuting to eat <strong>(mission)</strong></li></ul><ul id="e146253b-ad72-45f5-8b7d-bd2c9c816841" class="bulleted-list"><li>Higher user engagement leads to higher order completion, which is a main source of revenue for UberEats <strong>(revenue) </strong></li></ul></div></p><h2 id="19ba7a7e-ae4a-47b2-9192-4327f1a6c122" class="">Targeted user &amp; user prioritization</h2><p id="1ef81923-7e27-4d0d-9833-69c37e3bfd53" class="">There are 3 main parties using UberEat&#x27;s platform: </p><ul id="4bf939f0-735e-4b56-9807-12ed37bcc7e0" class="bulleted-list"><li>Users who order food </li></ul><ul id="52514388-074b-4fee-83dc-3762a01e2ba8" class="bulleted-list"><li>Restaurants </li></ul><ul id="a70b80b5-ad3e-4a9d-acff-f006ac46cd67" class="bulleted-list"><li>Drivers</li></ul><blockquote id="708ef771-fae3-4ef1-911c-e4265ccb589e" class="">I will focus on <strong>engaging user engagement for Customers who order food</strong> due to the fact that they are the ones paying for completed orders, accounting for the majority of UberEats&#x27;s revenues.</blockquote><p id="720b3eda-df57-4396-bf50-45bda677e821" class="">
+</p><div id="37d1953d-211a-4f8d-ad4d-1d9a6245329e" class="collection-content"><h4 class="collection-title">Targeted user groups</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Item</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Power users</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Casual users</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Occasional users</th></tr></thead><tbody><tr id="4e764e4e-b208-41d9-aa69-dffd123da18e"><td class="cell-title"><a href="https://www.notion.so/User-4e764e4eb20841d9aa69dffd123da18e">User </a></td><td class="cell-KZSe">18-25 young adults who don&#x27;t have time to cook and want to have a good affordable meal delivered at speed </td><td class="cell-but]">Professionals who don&#x27;t even have time to eat due to busy work schedule. They want to have a good meals delivered at speed </td><td class="cell-Sqhk">People who most of the time can cook, have time to enjoy yourself more than 2 previous groups. They go out to eat once in awhile and sometimes order delivery food for a new experience</td></tr><tr id="0f5342de-71ed-41a7-9704-6cc13f5db6b2"><td class="cell-title"><a href="https://www.notion.so/Frequency-of-ordering-0f5342de71ed41a797046cc13f5db6b2">Frequency of ordering</a></td><td class="cell-KZSe">Almost everyday </td><td class="cell-but]">2-3 times/week</td><td class="cell-Sqhk">1-3 times/month</td></tr><tr id="6c7b4c43-01be-48f0-bd14-bd082847de07"><td class="cell-title"><a href="https://www.notion.so/Example-6c7b4c4301be48f0bd14bd082847de07">Example</a></td><td class="cell-KZSe">Tien, 23 years old, college senior; often cramps up at night for exams and use internet very often</td><td class="cell-but]">Jay, 28 years old, product manager of a tech company; takes train to go to work every morning and goes home very late. </td><td class="cell-Sqhk">Mara, 40 years old, a mom of 2 teenagers and a manager in a big manufacture firm. Most of her time is spent upon taking care of her family and working </td></tr></tbody></table></div><p id="f4a07011-47e6-4025-bb2b-b69983596cef" class="">After analyzing some of UberEats&#x27;s promotion campaign such as Showdown 45: Tonight I&#x27;ll be eating... , Nobody Gets Buckets Of Love Like We Do, Go Get It, Respect Every Delivery, etc I decided to focus on <strong>Power users group. </strong>This group has been targeted in the majority of promotion campaign with the underlying traits as follow :</p><ul id="71a25883-071e-4f70-b19c-27f5c470eb63" class="bulleted-list"><li>Very task and success oriented </li></ul><ul id="e4e0d082-c43d-4c31-8843-76b8bf7fb13e" class="bulleted-list"><li>Busy with work / studies </li></ul><ul id="c285ebfe-4816-4550-880f-f0ebcc616155" class="bulleted-list"><li>True foodies, aware of different restaurants and have a standard when it comes to food </li></ul><ul id="3225ba4c-886f-40ed-aa0e-326f97d64c82" class="bulleted-list"><li>Residing in suburban or metropolitan area </li></ul><p id="5a68fec2-684a-4da9-b3ec-9f6bb41b265f" class="">My now narrowed down business objective would be</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8fdb51fa-7889-45ad-8ab9-d3b16b9d00b4"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Engaging user engagement for customers who need to order food almost everyday from suburban area</strong></div></figure><h2 id="10ec1b54-c4c5-40ca-a011-71aa9db2dab8" class="">User pain points &amp; Prioritization</h2><h3 id="6314291d-5800-4e9e-9486-99152a8c1f9b" class="">User&#x27;s goals</h3><p id="92f8830a-d607-4a58-8d15-9652ec2a318b" class="">Before listing out user pain points, it&#x27;s important to look at what the user goals are so that we can later prioritize our solutions from their perspective.  As for users who use UberEats to order almost everyday, they have 2 main goals:</p><blockquote id="9a487598-28d5-48a9-80e2-3a527ec5dc9f" class=""><strong>Primary goals</strong>: Successfully order food from their favorite restaurant and have it delivered fast</blockquote><blockquote id="d0a7d3a3-3caf-4ba9-baee-638575744508" class=""><strong>Secondary goals</strong>: Browse around restaurants offered on UberEats&#x27;s platform to explore new restaurants or food deals nearby</blockquote><h3 id="a1e42bf8-d168-4917-9b44-60f489c2accf" class="">Framework for prioritization </h3><p id="62482c7f-0dfb-4cea-92d6-1baa35d7a85b" class="">Before listing out user pain points, I will use the following framework to prioritize which pain points to focus on.</p><blockquote id="6a477d33-9e8a-4a13-ae94-37aee6ab9183" class=""><strong>User Experience (UX): how is this pain point affecting overall user experience</strong></blockquote><p id="e8dae968-8c93-4a8c-bb53-07a91990c9b5" class=""><span style="border-bottom:0.05em solid">High</span> : Has a significant impact on user journey by generating 1 or more barriers that prevents them from achieving primary goal </p><p id="9a960d55-b065-45e2-be26-3fb087e8db44" class=""><span style="border-bottom:0.05em solid">Medium</span>:  Reduces user experience in overall, but a temporary solution is already provided</p><p id="c127d68a-071a-4478-b297-3c1b25066d3a" class=""><span style="border-bottom:0.05em solid">Low</span> - Poses minor nuisance to user experience</p><p id="5536236c-c0fb-4d29-8f3c-0794669e4c2c" class="">
+</p><blockquote id="bc437500-8787-4ba6-a3a8-58ff9d570441" class=""><strong>Business impact: how is this pain point affecting the company&#x27;s financial performance</strong></blockquote><p id="3162c462-0ff4-4002-9992-047cb747c6f3" class=""><span style="border-bottom:0.05em solid">High</span>: Immediate missed revenues </p><p id="3d3478de-29c3-4154-90fe-ce4645c250c7" class=""><span style="border-bottom:0.05em solid">Medium</span>: Can result in missed revenues in the future</p><p id="c11a3542-6201-4de5-a606-2e24ad6102d3" class=""><span style="border-bottom:0.05em solid">Low</span>: Does not affect any financial performance</p><p id="e52028d5-9115-4184-b8ee-3eb2b9054005" class="">
+</p><div id="62103f64-3c30-47b5-8823-c93dd1b1134f" class="collection-content"><h4 class="collection-title">Pain points </h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Item</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Details</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Business impact</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>UX impact</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Rationale</th></tr></thead><tbody><tr id="85c77c0f-dd5a-41d0-bd87-310c243f1c09"><td class="cell-title"><a href="https://www.notion.so/Pain-point-1-85c77c0fdd5a41d0bd87310c243f1c09">Pain point 1</a></td><td class="cell-KZSe">My order gets delayed </td><td class="cell-uhhl">High</td><td class="cell-but]">High</td><td class="cell-={bU">This has High level of severity for both UX and business impact because it goes against UberEats value proposition, which is guaranteeing to deliver food on time, and denies users one of the very main reasons for them to use UberEats</td></tr><tr id="8df04fb4-032f-4ea0-9baf-772332aaf519"><td class="cell-title"><a href="https://www.notion.so/Pain-point-2-8df04fb4032f4ea09baf772332aaf519">Pain point 2</a></td><td class="cell-KZSe">I cannot cancel my order easily </td><td class="cell-uhhl">Medium</td><td class="cell-but]">High</td><td class="cell-={bU">Users get very frustrated if they cannot cancel their order. UberEats&#x27;s current policy protects restaurants by not allowing customers to cancel order once the order is accepted by the restaurant. I put business impact as Medium because while this issue severely affects customers, it helps UberEats to protect restaurant in a sense while saving money from lost cancellations </td></tr><tr id="e2ec54a2-f14b-43d8-bde5-0944af07f6fe"><td class="cell-title"><a href="https://www.notion.so/Pain-point-3-e2ec54a2f14b43d8bde50944af07f6fe">Pain point 3</a></td><td class="cell-KZSe">My food gets delivered to the wrong address</td><td class="cell-uhhl">Medium</td><td class="cell-but]">High</td><td class="cell-={bU">This issue mostly stems from 2 causes: 
+1) users don&#x27;t leave detailed instructions 
+2) drivers don&#x27;t bother reading detailed instructions
+I put business impact as Medium because as for the first cause, UberEats already provided a temporary solution to alert users updating address if drivers have difficulty navigating. As for the second cause, \</td></tr><tr id="bcafe503-e44a-44a9-8c1e-62f504d52d5c"><td class="cell-title"><a href="https://www.notion.so/Pain-point-4-bcafe503e44a44a98c1e62f504d52d5c">Pain point 4</a></td><td class="cell-KZSe">There is missing item in my delivery</td><td class="cell-uhhl">High</td><td class="cell-but]">High</td><td class="cell-={bU">This is a very frustrating issue. However, considering UberEats&#x27;s increasing investment in training program for UberEats drivers and its occasional frequency. I put the business impact as Medium</td></tr><tr id="5732c976-87bc-495d-a16d-1e74dbbf6772"><td class="cell-title"><a href="https://www.notion.so/Pain-point-5-5732c97687bc495da16d1e74dbbf6772">Pain point 5</a></td><td class="cell-KZSe">I cannot contact customer support</td><td class="cell-uhhl">Medium</td><td class="cell-but]">High</td><td class="cell-={bU">If customers cannot find customer service to assist them timely, there&#x27;s a high chance they will stop using the service immediately. However, customers usually come to contact support as last resort. I put business impact as Medium here because I think we should focus on understanding WHY customers need to come to contact support at first hand</td></tr></tbody></table></div><p id="abda3f49-9f85-44d0-a112-6e1d635967d0" class="">I will prioritize pain point 1 &amp; 2 &amp;4</p><h2 id="40e5cdd2-eb82-4a45-9b77-9947abaf0576" class="">Proposing solutions</h2><blockquote id="257d4824-de9d-4372-a5ba-876077f811d6" class=""><strong><span style="border-bottom:0.05em solid">Pain point 1</span></strong>: My order gets delayed</blockquote><p id="7a50d8dd-90d5-4c08-9ef0-8b598cbc72ee" class="">I have browsed through quite a number of user complaints on App store and realized that there are two major causes of delayed order. </p><p id="247b7273-8d47-45c0-9aba-a84734621139" class="">The first reason is due to lack of drivers at the time orders are made, which usually happens when customers order past midnights or just late evenings when restaurants are about to close down. </p><p id="0aff9fe9-cfae-46d3-b88f-79d2118084d5" class="">The second reason is customers&#x27;s address are hard for drivers to find. Most of UberEats drivers in the US deliver food by cars. For customers who live in apartments or in areas that require drivers to park, it can cause some trouble to navigate. In suburban area especially, if customers live in areas that are not car-friendly, it will take drivers longer time to figure out shortcuts. </p><ul id="a1caa594-3805-469d-ab9a-25ef4c48856b" class="toggle"><li><details open=""><summary>Proposed solutions </summary><p id="817f3b4a-84de-4d43-85dc-a910efd5e047" class=""><span style="border-bottom:0.05em solid">Solution 1</span>: If customers order food in the evening, check if it&#x27;s has passed the restaurant&#x27;s closing time. If customers order food within a 15 minutes timeframe before the restaurant is about to close, send an alert to customers to make them aware about potential extra delay. By giving customers the power to make a decision when they are fully aware of involved risks, customers will feel less frustrated even if the delay happens. </p><p id="799e04c5-3935-4d1b-a868-5da59faaa2a4" class=""><span style="border-bottom:0.05em solid">Solution 2</span>: Customers can tolerate some mistakes if they receive on-time explanation on their food delay instead of letting them feel clueless about what&#x27;s going on. When an order takes longer than initial estimation to reach customers, show a notification in the app telling customers why it is delayed. This can be something such as &quot;We are sorry for the inconvenience. The restaurant is running a little slow today due to high demand&quot;. </p><p id="ecf9cda5-d706-4e59-8ef8-f2472074ebb2" class=""><span style="border-bottom:0.05em solid">Solution 3</span>: Increase the number of available drivers in non car-friendly areas by creating a program that encourages people who have a bike to become UberEats&#x27;s deliveryman. This can be college students who want to earn extra money, or fitness enthusiasts who want to get pocket money while doing exercise. I think this will also support Uber&#x27;s value in general considering how much the company is committed to sustainability. </p><p id="1d5c353b-b95b-4e30-99b6-338f3d2526d1" class="">
+</p></details></li></ul><p id="a7d69cee-0f48-4747-ba8d-a896349f6922" class="">
+</p><blockquote id="0a10ab00-7fd5-46ad-a86c-9b69d22a37ee" class=""><strong><span style="border-bottom:0.05em solid">Pain point 4</span></strong>: There is missing items in delivery </blockquote><p id="e13910fa-9086-44e4-ab05-cb20f2cd3a9b" class="">Missing items in delivery is rooted in 2 causes: either the restaurant missed the portion by accident or drivers take the food for themselves. </p><p id="08d6d02c-87bc-49f1-8fae-4011449a0f4e" class="">Drivers cheating customers&#x27;s food is certainly unacceptable. While this issue significantly harms user experience and that drivers should be held accountable, it is also important to understand why drivers do such acts. It can be due to &quot;a moment of sinful temptation&quot; as they are working late at night and get hungry, or they have been too busy to buy a meal, or potentially they want to save money. </p><p id="0a19c6cd-c745-4f10-ad95-fadd661a20f9" class="">On the other hands, it can be due to a bad habit they have, even though there are no real external difficulties.</p><p id="42b57e73-4aee-4be4-8e1a-b1b16fe795ef" class="">Another possibility for missing items is that drivers only have a summary of the order. They don&#x27;t have full visibility on what should be included in the order so that they will take whatever said to be ready by restaurant. </p><p id="5dc0797f-03f2-45ff-8b41-b894a79f0902" class="">The following solutions are proposed to resolve issues from both restaurants&#x27;s side and drivers&#x27;s side. </p><ul id="4f46aa37-85c9-4429-82a1-2479bf67be15" class="toggle"><li><details open=""><summary>Proposed solutions </summary><p id="3540aaec-73aa-4a40-ab39-0a052f8ef514" class=""><span style="border-bottom:0.05em solid">Solution 4</span>: Require restaurants to take photo of the food before it is shipped and update the photo on UberEats&#x27;s platform. Users should be able to view photos as their order delivery status changes to &#x27;On the way&#x27;. If missing item is then delivered to customers, customers should have the option to notify UberEats on its platform easily.</p><p id="f10b365d-036c-4b16-bc91-077ac34f494f" class=""><span style="border-bottom:0.05em solid">Solution 5</span>: Allow users to make a checklist on the oder&#x27;s details before drivers come and pick it up </p><p id="dc4c4c0b-425a-49e3-af54-4bc89ab37570" class=""><span style="border-bottom:0.05em solid">Solution 6</span>: Before users confirm an order, allow them to select whether they want their drivers to check the food before it is shipped or not. Users can pay a small fee if they select this option (0.5c - $1). This would give drivers more incentive to make sure the order is completed whole </p><p id="b9f63ea5-f6a8-4005-8807-321e00b2c599" class=""><span style="border-bottom:0.05em solid">Solution 7</span>: Offer drivers who take late night shift different incentives to encourage them to successfully order a delivery. The incentives can range from special tips from UberEats for &quot;late night snack&quot; or a free meal for every 10 successful orders shipped in late night. </p></details></li></ul><h2 id="5664058d-38bf-44d6-bf1d-ca5fc41d71a6" class="">Prioritizing solutions </h2><h3 id="32c1b856-6ffd-4d9a-bcd0-f9081d4f95cd" class="">Framework for prioritization </h3><blockquote id="cc8507a3-730a-4ce1-b430-63ab66c529e1" class=""><strong>Technical complexity</strong>: Does this solution require much development effort? Are there foreseeable or non-foreseeable challenges that can hinder the progress?</blockquote><blockquote id="a1dc79ea-878a-43ea-b0b3-bc0fccc7a99f" class=""><strong>UX impact</strong>: What kind of impact level this solution will have on user engagement overall? </blockquote><blockquote id="ece8659c-e9f4-4904-a190-2caead9b946d" class=""><strong>Priority level</strong>: From UX impact and Technical complexity, what is the priority level for this solution? </blockquote><p id="45356547-7f95-4c27-8c28-093a2c0122c6" class="">
+</p><div id="0bec5d71-0c29-4848-8604-6ece93e7e03c" class="collection-content"><h4 class="collection-title">Prioritizing solutions table</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Solution</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Technical complexity</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>UX impact</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Priority</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Rationale</th></tr></thead><tbody><tr id="d6d84826-2c3e-4d22-ada9-2b3fbfde9111"><td class="cell-title"><a href="https://www.notion.so/Solution-1-Alert-users-if-the-restaurant-closes-down-soon-and-gives-them-alert-on-potential-delay-d6d848262c3e4d22ada92b3fbfde9111">Solution 1: Alert users if the restaurant closes down soon and gives them alert on potential delay</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value">High</span></td><td class="cell-I^gp">P2</td><td class="cell-hr=F">We will need to collect data of restaurants&#x27;s closing hours. Each time a user makes an order, we need to compare that timeframe with that specific restaurant&#x27;s closing hour. With Uber&#x27;s resource, this should be something achievable, hence I put Medium for technical complexity</td></tr><tr id="d31496c0-a1e2-46c0-952e-0bea7a45f45c"><td class="cell-title"><a href="https://www.notion.so/Solution-2-Require-drivers-to-send-customized-alert-to-users-when-the-order-is-later-than-initial-e-d31496c0a1e246c0952e0bea7a45f45c">Solution 2: Require drivers to send customized alert to users when the order is later than initial expectation</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value select-value-color-red">Medium</span></td><td class="cell-I^gp">P3</td><td class="cell-hr=F">We will have to constantly check the delivery time against initial expected delivery time, hence I put Medium for technical complexity. Even though this can help make customers less frustrated by keeping them informed, users will still have to wait for late order. This is not the solution for root cause, hence I put Medium for UX Impact</td></tr><tr id="985dc682-89a2-40da-a8ba-9fd6ece0b6e3"><td class="cell-title"><a href="https://www.notion.so/Solution-3-Increase-the-number-of-available-drivers-in-non-car-friendly-areas-by-creating-a-program-985dc68289a240daa8ba9fd6ece0b6e3">Solution 3: Increase the number of available drivers in non car-friendly areas by creating a program that encourages people who have a bike to become UberEats&#x27;s deliveryman</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-brown">High</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value">High</span></td><td class="cell-I^gp">P2</td><td class="cell-hr=F">This will require extensive investment marketing cost from the company, along with modification in the app used by drivers&#x27;s side. Hence I put complexity as High</td></tr><tr id="d8578c23-d600-461a-a0f8-a1baecadb556"><td class="cell-title"><a href="https://www.notion.so/Solution-4-Require-restaurants-to-take-photo-of-the-food-before-it-is-shipped-and-update-the-photo--d8578c23d600461aa0f8a1baecadb556">Solution 4: Require restaurants to take photo of the food before it is shipped and update the photo on UberEats&#x27;s platform</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-gray">Low</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value">High</span></td><td class="cell-I^gp">P1</td><td class="cell-hr=F">This will make it easier for customers to know who&#x27;s the &quot;culprit&quot; for their missing food item. They can also provide quicker photos to customers support </td></tr><tr id="2e185627-8ac1-4a83-87f4-f3b23dcb5cce"><td class="cell-title"><a href="https://www.notion.so/Solution-5-Allow-users-to-make-a-checklist-on-the-oder-s-details-before-drivers-come-and-pick-it-up-2e1856278ac14a8387f4f3b23dcb5cce">Solution 5: Allow users to make a checklist on the oder&#x27;s details before drivers come and pick it up</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-gray">Low</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value select-value-color-orange">Low</span></td><td class="cell-I^gp">P3</td><td class="cell-hr=F">Even thought the technical complexity for this solution is low,  it does not guarantee to bring about significant improvement in UX since users have to put extra effort to create a checklist for drivers</td></tr><tr id="7f028e03-f85c-4ce3-82e7-f91b48680b9e"><td class="cell-title"><a href="https://www.notion.so/Solution-6-Allow-users-to-select-whether-they-want-their-drivers-to-check-the-food-before-it-is-shi-7f028e03f85c4ce382e7f91b48680b9e">Solution 6: Allow users to select whether they want their drivers to check the food before it is shipped or not. Users can pay a small fee if they select this option (0.5c - $1)</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-gray">Low</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value">High</span></td><td class="cell-I^gp">P1</td><td class="cell-hr=F">This can give drivers more incentive to prevent missing items coming from restaurants </td></tr><tr id="3ad1e906-2f80-4e00-b193-927dc57a10f4"><td class="cell-title"><a href="https://www.notion.so/Solution-7-Offer-drivers-who-take-late-night-shift-different-incentives-to-encourage-them-to-succes-3ad1e9062f804e00b193927dc57a10f4">Solution 7: Offer drivers who take late night shift different incentives to encourage them to successfully order a delivery</a></td><td class="cell-DOB;"><span class="selected-value select-value-color-gray">Low</span></td><td class="cell-K&gt;&lt;h"><span class="selected-value select-value-color-orange">Low</span></td><td class="cell-I^gp">P3</td><td class="cell-hr=F">This does not guarantee a decrease in users&#x27; missing item . Drivers with bad habits may not care about add-on benefits at all</td></tr></tbody></table></div><h3 id="b6959413-7951-4686-a0b3-999d4632f9f6" class="">Conclusion </h3><p id="e31af06e-8b39-4e72-92e8-ed0f3c7faa66" class="">Based on the analysis above, I come up with the priority features as follow:</p><p id="7d46af5c-4668-4891-abcc-fed65c5d86cf" class=""><strong>Must have</strong></p><ul id="35bfb81a-15f3-4fee-8965-c62e8666b088" class="bulleted-list"><li>Allow users to select whether they want their drivers to check the food before it is shipped or not. Users can pay a small fee if they select this option (0.5c - $1)</li></ul><ul id="2eba8c0a-4832-451a-b51b-c5b884842afe" class="bulleted-list"><li>Require restaurants to take photo of the food before it is shipped and update the photo on UberEats&#x27;s platform</li></ul><p id="247196e4-af89-4304-b0e2-c0cf31501793" class=""><strong>Should have</strong></p><ul id="4c3da038-9797-4c75-8528-31c2eb19b0a2" class="bulleted-list"><li>Alert users if the restaurant closes down soon and gives them alert on potential delay</li></ul><ul id="3b8b902c-db49-4329-a94f-461937ca277c" class="bulleted-list"><li>Increase the number of available drivers in non car-friendly areas by creating a program that encourages people who have a bike to become UberEats&#x27;s deliveryman</li></ul><p id="c2df65aa-1d42-4695-be95-4efcfd81271d" class=""><strong>Nice to have</strong></p><ul id="9f8a531d-243b-4c4d-97b6-a967473fa166" class="bulleted-list"><li>Allow users to make a checklist on the oder&#x27;s details before drivers come and pick it up</li></ul><ul id="5a5741f6-ff06-40b4-8cea-08f08da01898" class="bulleted-list"><li>Offer drivers who take late night shift different incentives to encourage them to successfully order a delivery</li></ul><h2 id="3b4f28e8-2783-4bf4-bfde-3d2dbe4db0d8" class="">Metrics</h2><p id="117d1857-76ae-4098-b765-415bb14f0b58" class="">I will look into the following metrics before and after the solution is implemented: (please note these metrics are set up for Must have and Should have feature only)</p><p id="e1f5eeed-6805-4612-8ba5-c5b975098f81" class="">#1 Number of customer tickets on missing food item </p><p id="31a6b0ac-848c-4021-af26-10e54007a6c4" class="">#2 Number of users who pay extra for drivers checking their food </p><p id="96ad6ece-58d8-4f25-ab0f-607cb18c334c" class="">#3 Number of cancelled orders </p><p id="81486bc2-10f4-47e4-85e5-e234331694e9" class="">#4 Number of customer tickets on delayed food item</p></div></article></body></html>
